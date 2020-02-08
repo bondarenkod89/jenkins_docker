@@ -29,4 +29,17 @@ jobs:
               }
           }
       }
-  
+      pipelineJob('MyParameterizedJob') {
+          definition {
+              cpsScm {
+                  scriptPath 'Parametrized.groovy'
+                  scm {
+                    git {
+                        remote { url 'https://github.com/bondarenkod89/jenkins_docker.git' }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+              }
+          }
+      }
