@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage("Wat") {
       steps {
-        echo "selectedEnvironment: ${params.property1.txt}"
+        echo "Some output"
       }
     }
   }
