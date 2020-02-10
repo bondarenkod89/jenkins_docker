@@ -17,4 +17,5 @@ pipeline {
       }
     }
   }
+  properties([buildDiscarder(logRotator(numToKeepStr: '100'))
 }
