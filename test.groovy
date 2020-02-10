@@ -17,11 +17,11 @@ node {
 
     println "Get second property!!!"
     def props2 = new Properties()
-    def stream = new FileInputStream("/usr/share/jenkins/ref/property2.txt")
+    def stream2 = new FileInputStream("/usr/share/jenkins/ref/property2.txt")
     try {
-    props2.load(stream)
+    props2.load(stream2)
     } finally {
-    stream.close()
+    stream2.close()
     }
     def var2 = Arrays.asList(props2)
     System.out.println(var2)
