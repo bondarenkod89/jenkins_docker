@@ -28,14 +28,13 @@ node {
     return var2
 
 
-properties([buildDiscarder(logRotator(numToKeepStr: '100')),
+properties([
     parameters([
-        [$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: 'filename', filterLength: 1, filterable: false, name: 'files', 
+        [$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: 'filename', filterLength: 1, filterable: false, name: 'files', randomName: 'choice-parameter-941595250365512', 
         script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], 
-        script: [classpath: [], sandbox: false,
-        script: sh(returnStdout:true, script: 'cat /usr/share/jenkins/ref/property1.txt')]]], 
+        script: [classpath: [], sandbox: false, script: sh(returnStdout:true, script: 'cat /usr/share/jenkins/ref/property1.txt')]]], 
         [$class: 'CascadeChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: '', filterLength: 1, filterable: false, name: 'value', randomName: 'choice-parameter-941595264446171', referencedParameters: 'files', 
-        script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], 
-        script: [classpath: [], sandbox: false, script: sh(returnStdout:true, script: 'cat /usr/share/jenkins/ref/property2.txt')]]]])])
-
+        script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], script: [classpath: [], sandbox: false, script: sh(returnStdout:true, script: 'cat /usr/share/jenkins/ref/property2.txt')]]]])])
+    
+    sh 'echo Welcome to IT!'
 }
