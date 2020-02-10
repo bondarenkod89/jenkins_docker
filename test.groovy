@@ -38,13 +38,4 @@ properties([buildDiscarder(logRotator(numToKeepStr: '100')),
         script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], 
         script: [classpath: [], sandbox: false, script: sh(returnStdout:true, script: 'cat /usr/share/jenkins/ref/property2.txt')]]]])])
 
-/*properties([
-    parameters([
-        [$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: 'filename', filterLength: 1, filterable: false, name: 'files', randomName: 'choice-parameter-941595250365512', 
-        script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], 
-        script: [classpath: [], sandbox: false, 
-        script: sh(returnStdout:true, script: 'cat /var/jenkins_home/workspace/trap1703/res1.txt')]]], 
-        [$class: 'CascadeChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: '', filterLength: 1, filterable: false, name: 'value', randomName: 'choice-parameter-941595264446171', referencedParameters: 'files', 
-        script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], 
-        script: [classpath: [], sandbox: false, script: sh(returnStdout:true, script: 'cat /var/jenkins_home/workspace/trap1703/res2.txt')]]]])])
-*/
+}
