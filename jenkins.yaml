@@ -15,7 +15,10 @@ tool:
                id: "3.5.4"
 jobs:
   - script: >
-      pipelineJob('MyFirstPipeline') {
+      pipelineJob('DSL_Pipeline') {
+        logRotator{
+          numToKeep(2)
+        }
           definition {
               cpsScm {
                   scriptPath 'Jenkinsfile'
