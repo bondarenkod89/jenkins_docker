@@ -17,7 +17,7 @@ jobs:
   - script: >
       pipelineJob('DSL_Pipeline') {
         logRotator{
-          numToKeep(2)
+          numToKeep(100)
         }
           definition {
               cpsScm {
